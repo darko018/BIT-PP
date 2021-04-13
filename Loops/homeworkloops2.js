@@ -115,15 +115,16 @@ console.log(output);
 // Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 // Output array: [4, 3, 5, 8, 6, 11, 2, 9]
 
-var a = [4, 5, 6, 2];
-var b = [3, 8, 11, 9];
-var c = [];
+var array = [4, 5, 6, 2];
+var array1 = [3, 8, 11, 9];
+var newArray = [];
 
-for(i = 0; i < a.length; i++) {
-  c = a[i];
-  c = b[i];
+
+for (var i = 0; i < array1.length; i++ ) {
+    newArray[newArray.length] = array[i];
+    newArray[newArray.length] = array1[i];
 }
-console.log(c);
+console.log(newArray);
 
 
 // 8. Write a program that concatenates two arrays.

@@ -3,9 +3,10 @@
 function maximum(number1, number2) {
     if (number1 > number2){
         return number1;
-    } else {
+    }  if (number2 > number1){
         return number2;
     }
+    return 'Numbers are equal'
 }
 var result = maximum(15, 10);
 console.log(result)
@@ -16,10 +17,9 @@ console.log(result)
 function isOdd(number) {
     if(number%2 !== 0) {
         return true;
-    } else {
+    } 
         return false;
     }
-}
 var result = isOdd(5);
 console.log(result)
 
@@ -83,33 +83,39 @@ console.log(square1)
 // * * *
 // * * * * * * *
 
-function square (n){
-    var square = '';
-    for(var i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
-            if (i === 0 || i === n - 1){
-                square += '* ';
-            } else if(j === 0 || j === n - 1){
-                square += '* ';
-            } else {
-                square += '  ';
-            }
-        }
-        square += '\n';
-    }
-
-    return square;
+ function chart(x, y, z) {
+  var star = "";
+  for (var i = 0; i < x; i++) {
+    star += "*";
+  }
+  star += "\n";
+  for (var i = 0; i < y; i++) {
+    star += "*";
+  }
+  star += "\n";
+  for (var i = 0; i < z; i++) {
+    star += "*";
+  }
+  return star;
 }
-var square1 = square(5, 3, 7);
-console.log(square1)
+console.log(chart(5, 3, 7));  
 
 
 
 // 7. Write a program that calculates a number of digits of a given number.
 
-// function digits(numbers) 
+function numOfDigits (num) {
+    var digitCounter = 0;
 
-
+    if (num < 0){
+        num *= -1;
+}
+    for (var i = num; i >= 1; i /= 10){
+        digitCounter++;
+    }
+    return digitCounter;
+}
+console.log(numOfDigits(100));
 
 
 
@@ -117,7 +123,6 @@ console.log(square1)
 // array.
 // Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
 // Result: 3
-
 
 
 var a = [2, 4, 7, 8, 7, 7, 1];
@@ -138,16 +143,49 @@ console.log(result);
 
 
 
-
-
-
 // 9. Write a program that calculates the sum of odd elements of a given array.
 
 
-// function sumOfOdd(number) {
-//     if(number%2 !== 0) {
-//         return c + sumOfOdd;
-//     } 
-// }
-// var c = sumOfOdd(5, 6, 11);
-// console.log(result)
+function sum(array) {
+    var summ = 0;
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 1) summ += array[i];
+    }
+    return summ;
+  }
+  
+  var someNumbers = [1, -5, 10, 7, -3, 27, -23];
+  console.log(sum(someNumbers));
+
+  
+  // 10. Write a program that calculates the number of appearances of a letter a in a given string.
+  // Modify the program so it calculates the number of both letters a and A.
+  function calculator1(string) {
+    var count = 0;
+    for (var i = 0; i < string.length; i++) {
+      if (string[i] === "a" || string[i] === "A") {
+        count += 1;
+      }
+    }
+    return count;
+  }
+  
+  var letters =
+    " This is a very long string thAt contains letter A and I hate doing this At 2 a.m";
+  console.log(calculator1(letters));
+
+  
+  // 11. Write a program that concatenates a given string given number of times. For example, if
+  // “abc” and 4 are given values, the program prints out abcabcabcabc.
+  
+  function concatenate(string, number) {
+    var total = "";
+    for (var i = 0; i < number; i++) {
+      total += string;
+    }
+    return total;
+  }
+  
+  var a = "abc";
+  var b = 4;
+  console.log(concatenate(a, b));
