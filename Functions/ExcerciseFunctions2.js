@@ -269,9 +269,7 @@ function humanize(a){
             default:
                 c = b + 'th';
         }
-    }
-            
-    return c;  
+    } return c;  
 }
 var result = humanize(42);
 console.log(result);
