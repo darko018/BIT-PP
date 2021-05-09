@@ -113,3 +113,10 @@ var filterArray = (function (array) {
     } return result;
 })([2, 8, 11, 4, 9, 3]);
 console.log(filterArray);
+
+var a = [1,2,3,4];
+var b=a;
+
+b[4]=100;
+console.log(a);
+console.log(b);
