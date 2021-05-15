@@ -97,10 +97,10 @@ function createRecipe (name, cuisine, complexity, ingredients, time, instruction
 
 var recipe = createRecipe("Punjene paprike","Serbian",5,['paprika', 'luk', 'meso', 'pirinac', 'sargarepa', 'vegeta', 'paradajz sok', 'so', 'biber'], 120, 'Paprike izdubiti i napuniti nadevom od mesa i zacina. U serpicu dodati sok od paradajza, vodu, so i staviti na vatru da se prokuva. Pred kraj kuvanja dodati zaprsku. Vreme pripreme 2 sata.');
 
-// recipe.mealIngredients();                //prints needed ingredients when uncommented
-// recipe.timeOfPreparing();                //checks if needed time of preparing is within 15 minutes
-//console.log(recipe.typeOfCuisine);        //prints type of cuisine
-//recipe.changeCuisine("hungarian");        //change the type of cuisine
-//console.log(recipe.typeOfCuisine);        //prints new (changed) type of cuisine
-// console.log(recipe.ingredients);         //prints needed ingredients
-// recipe.deleteIngredient('kupus');        //delete given ingredient and prints new list of needed ingredients 
+// recipe.mealIngredients();                 //prints needed ingredients when uncommented
+// recipe.timeOfPreparing();                 //checks if needed time of preparing is within 15 minutes
+// console.log(recipe.typeOfCuisine);                  //prints type of cuisine
+// recipe.changeCuisine("serbian");                    //change the type of cuisine
+// console.log(recipe.typeOfCuisine);                  //prints new (changed) type of cuisine
+// console.log(recipe.ingredients);                    //prints needed ingredients
+// recipe.deleteIngredient('punjene paprike');         //delete given ingredient and prints new list of needed ingredients 
