@@ -20,3 +20,5 @@ function removeDuplicates(arr) {
     });
 }
 console.log(removeDuplicates(arr));
+
+\
