@@ -240,3 +240,52 @@ var output = hasNumber(stringNumber);
 console.log(output)
 
 // c \\
+
+function checkIfStringIsValidHexadecimalColor(string) {
+  var result = true;
+  if (string[0] != "#") {
+      result = false;
+      return result;
+  }
+  if (string.length < 4 || string.length > 7) {
+      result = false;
+      return result;
+  }
+  //for (var i = 0; i < string.length - 1; i++) {
+      //if (string[i + 1] == ("A" || "a" || "B" || "b" || "C" || "c" || "D" || "d" || "E" || "e" || "F" || "f")) {
+       //   string1 += string[i + 1];
+     // }
+    //  console.log("string1: " + string1);
+  //}
+  //if (string1 == string) {
+   //   result = true;
+ // } else {
+    //  result = false;
+  //}
+
+  var listOfValid = ['a', 'b', 'c', 'd', 'e', 'f', "1", "2" ];
+
+  var stringWithoutHashTag = string.split('#')[1];
+  if(!isFinite(Number("0x" + stringWithoutHashTag))) {
+      result = false;
+  }
+//   //  stringWithoutHashTag.split("").forEach(function (elem){
+//    //     var indexOfCurrent = listOfValid.indexOf(elem.toLowerCase());
+//    //     console.log(elem, indexOfCurrent);
+//    //     if(indexOfCurrent === -1){
+//     //        result = false;
+//    //     }
+//   //  });
+
+    return result;
+  }
+  console.log(checkIfStringIsValidHexadecimalColor("#AACCFF"));
+  console.log(checkIfStringIsValidHexadecimalColor("#AZ00FF"));
+
+
+// d \\  
+  
+// e. Write a function named validator that returns an object with properties
+// stringValidator, passwordValidator, colorValidator, and yearValidator referencing
+// the functions from a) to d).
+
