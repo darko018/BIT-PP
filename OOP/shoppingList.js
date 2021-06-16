@@ -77,5 +77,25 @@
         this.valid = new Date (validDate);
     }
 
+    function checkoutAndBuy (bag, card) {
+        if (!(bag instanceof ShoppingBag) || !(card instanceof PaymentCard)) {
+            throw new Error ("Invalid input!")
+        }
+        var cardAmount = card.accountBalance;
+        var totalPrice = bag.calculateTotalPrice();
+        if (card.valid.getTime() > Date.now()) {
+            if (cardAmount >= totalPrice) {
+                return "Your purchase is successful!"
+            } else {
+                var missingAmount = totalPrice - cardAmount;
+                return "You are missing " + missingAmount.toFixed(2) + " to complete your purchase!"
+            }
+        } else {
+            throw new Error ("Your card has expired!");
+        }
+        
+        
+    }
+
     
 }) 
