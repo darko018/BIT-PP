@@ -52,5 +52,7 @@ Manager.prototype.changeDepartment = function (dep) {
 
 
 
-var employee1 = new Employee("Darko", "Kovacevic", "frontend developer", 60000);
+var employee1 = new Employee("Darko", "Kovacevic", "Frontend Developer", 60000);
+console.log(employee1.increaseSalary()); 
 console.log(employee1);
+

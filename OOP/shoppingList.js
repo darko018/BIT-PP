@@ -97,5 +97,18 @@
         
     }
 
+    try {
+        var product = new Product ("strawberry", 250, "Jun 06 2022");
+        var product2 = new Product ("pineapple", 120, "Jul 12 2023")
+        var card = new PaymentCard(500, true, "Feb 10 2025");
+
+        var bag = new ShoppingBag();
+        bag.addProduct(product);
+        bag.addProduct(product2)
+        var output = checkoutAndBuy(bag, card);
+        console.log(output);
+    } catch (err) {
+        console.log(err.message);
+    }
     
-}) 
+}) ();
