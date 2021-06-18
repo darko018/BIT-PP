@@ -1,67 +1,91 @@
 class App {
-    constructor (name, licence,stars) {
-        this.name = name;
-        this.licence = licence;
-        this.stars = stars;
+    constructor(name, licence, stars) {
+      this.name = name;
+      this.licence = licence;
+      this.stars = stars;
     }
-
-    isCCLicence () {
-        return (this.licence === "CC");
+  
+    getData() {
+      return this.name + ' ' + this.licence + ' ' + this.stars;
     }
-
-    like () {
-        this.stars += 1;
+  
+    isCCLicence() {
+      if (this.licence === 'CC') {
+        return 'This licence is ' + this.licence;
+      } else {
+        return 'This licence is not CC';
+      }
     }
-
-    showStars () {
-        console.log(this.stars);
+  
+    like() {
+     this.stars += 1;
     }
-}
-
-class WebApp extends App {
-    constructor (name, licence, stars, technologies) {
-
-    super (name, licence, stars)
-    this.technologies = technologies;
+  
+    showStars() {
+     return ('The number of stars are ' + this.stars);
     }
-
-    getData () {
-        console.log(this.name + ", " + this.licence + ", " + this.stars + ", " + this.technologies);
+  }
+  
+  
+  
+  class WebApp extends App {
+    constructor(name, url, technologies, licence, stars) {
+      super(name, licence, stars);
+  
+      this.url = url;
+      this.technologies = technologies;
     }
-
-    reactBased () {
-        this.technologies.forEach(function (el) {
-            if (el === "React") {
-                result = true;
-            } else {
-                return false;
-            }
-        })
+    getWebData() {
+      return this.getData() + ' ' + this.url + ' ' + this.technologies;
     }
-
-}
-
-class MobileApp extends App {
-    constructor (name, licence, stars, platforms) {
-        
-    super (name, licence, stars)   
-    this.platforms = platforms; 
+  
+    reactBased() {
+      if (this.technologies === 'React') {
+        return 'This technology is ' + this.technologies;
+      } else {
+        return 'This technology is not React'
+      }
     }
-
-    getData () {
-        console.log(this.name + ", " + this.licence + ", " + this.stars + ", " + this.platforms);    
+  
+  }
+  
+  
+  
+  class MobileApp extends App {
+    constructor(name, platforms, licence, stars) {
+      super(name, licence, stars);
+  
+      this.platforms = platforms;
     }
-
-    forAndroid () {
-        this.platforms.forEach(function (el) {
-            if (el === "Android") {
-                result = true;
-            } else {
-                return false;
-            }
-        })
+  
+    getMobileData() {
+      return this.getData() + ' ' + this.platforms;
     }
-}
-
-var mobile1 = new MobileApp ("Samsung", "CC", 3, "Android");
-console.log(mobile1.isCCLicence());
+  
+    forAndroid() {
+      if (this.platforms === 'Android') {
+        return 'The application is developed for ' + this.platforms;
+      } else {
+        return 'The application is not developed for Android'
+      }
+    }
+  
+  }
+  
+  
+  // testing
+  
+  var web1 = new WebApp('GitHub', 'https://reactjs.org', 'React', 'CC', 5);
+  console.log(web1.isCCLicence());
+  console.log(web1.reactBased());
+  console.log(web1.stars);
+  console.log(web1.like());
+  web1.showStars();
+  
+  var mob1 = new MobileApp('SoloLearn', 'Android', 'CC', 4);
+  console.log(mob1.getMobileData());
+  console.log(mob1.forAndroid());
+  console.log(mob1.stars);
+  console.log(mob1.like());
+  console.log(mob1.stars);
+  mob1.showStars();
