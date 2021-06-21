@@ -1,5 +1,6 @@
 // 1.Create an object that represents your favourite coffee. Please include coffee name, strength, flavour, milk, sugar, … everything you like!
 
+
 var coffie = {
     name:"esspreso", 
     strength: "strong", 
@@ -9,7 +10,9 @@ var coffie = {
 }
 console.log(coffie.flavour);
 
+
 // 2.Create an object that represents your favourite movie. Please include title, actors, director, genre, popularity.
+
 
 var movie = {
     title:"Jumanji", 
@@ -23,7 +26,9 @@ var movie = {
 console.log(movie.director.firstName);
 console.log(movie.director);
 
+
 // 3.Write a function that creates an object that represents a project. Each project is described by: description,  programming language, git repository, boolean status that says if the project is in development or not. Add a method that prints out the project's repository,  a method that checks if the project is written in JavaScript as well as a method that checks if the project is in development or not.
+
 
 function project(des, lan, repository, stat,) {
     var obj = {
@@ -52,11 +57,13 @@ function project(des, lan, repository, stat,) {
   var func = project("E-commerce", "PHP", "SomeGitHubProfile", true);
   console.log(func.printStatus());
 
+
 // 4.Write a function that creates an object that represents a culinary recipe. Each recipe is described by: name, type of cuisine, complexity (value from 1 to 5), list of ingredients, preparing time, preparing instruction. 
 //   Add a method that prints out all the ingredients necessary for the meal preparation. 
 //   Add a method that checks if a meal can be prepared for 15 minutes. 
 //   Add a method that changes the type of cuisine to the given value. 
 //   Add a method that delete a given ingredient from the list of ingredients.
+
 
 function createRecipe (name, cuisine, complexity, ingredients, time, instruction){
     var recipe = {
@@ -96,6 +103,7 @@ function createRecipe (name, cuisine, complexity, ingredients, time, instruction
 }
 
 var recipe = createRecipe("Punjene paprike","Serbian",5,['paprika', 'luk', 'meso', 'pirinac', 'sargarepa', 'vegeta', 'paradajz sok', 'so', 'biber'], 120, 'Paprike izdubiti i napuniti nadevom od mesa i zacina. U serpicu dodati sok od paradajza, vodu, so i staviti na vatru da se prokuva. Pred kraj kuvanja dodati zaprsku. Vreme pripreme 2 sata.');
+
 
 // recipe.mealIngredients();                 //prints needed ingredients when uncommented
 // recipe.timeOfPreparing();                 //checks if needed time of preparing is within 15 minutes
