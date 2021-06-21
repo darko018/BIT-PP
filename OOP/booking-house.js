@@ -218,10 +218,8 @@
         var bettingHouse = new BettingHouse("Football World Cup Winner,");
         bettingHouse.addBettingPlaces(bettingPlace1);
         bettingHouse.addBettingPlaces(bettingPlace2);
-
         
         console.log(bettingHouse.allData());
-
         
     }catch (err) {
         console.log(err.message);
