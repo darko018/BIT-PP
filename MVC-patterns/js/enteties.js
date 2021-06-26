@@ -19,3 +19,27 @@ Movie.prototype.getData = function() {
     return this.title + ", " + this.lenght + "min." + ", " + this.genreCode();
 }
 
+function Program(date) {
+    this.date = new Date(date);
+    this.listOfMovies = [];
+}
+
+Program.prototype.lenghtOfAllMovie = function(){
+    var sumOfMinutes = 0;
+    this.listOfMovies.forEach(function (item) {
+        sumOfMinutes += item.lenght;
+    });
+    return sumOfMinutes;
+}
+
+Program.prototype.addMovie = function (movie) {
+    if (!movie || !(movie instanceof Movie)) {
+        console.log("Invalid input!!!");
+        return;
+    }
+    this.listOfMovies.push(movie);
+}
+
+Program.prototype.getTotalMovies = function() {
+    
+}
