@@ -41,5 +41,17 @@ Program.prototype.addMovie = function (movie) {
 }
 
 Program.prototype.getTotalMovies = function() {
+    var day = this.date.getDate();
+    var month = this.month.getMonth() + 1;
+    var year = this.year.getFullYear();
+    var date = day +"." + month +"." + year;
+    var resultString = date;
     
+    if (this.getTotalMovies() === 0) {
+        resultString += ", Program to be announced.";
+        return resultString;
+    }
+
+    resultString += ", " + this.getTotalMovies() + "movies duration:" + this.lenghtOfAllMovie() + "min.";
+    return resultString; 
 }
