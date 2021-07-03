@@ -1,22 +1,23 @@
 function Festival() {
     this.listOfAllMovies = [];
-    this.listOfPrograms = [];
+    this.listOfprograms = [];
 }
 
-function Movie (title, lenght, genre) {
+function Movie(title, length, genre) {
     this.title = title;
-    this.lenght = lenght;
+    this.length = parseInt(length);
     this.genre = genre;
 }
 
-Movie.prototype.genreCode = function() {
-    var firstLetter = this.genre[0].toUpperCase();
-    var lastLetter = this.genre[this.genre.lenght - 1].toUpperCase();
-    return firstLetter + lastLetter;
+Movie.prototype.genreTwoLetters = function () {
+    var first = this.genre[0].toUpperCase();
+    var last = this.genre[this.genre.length - 1].toUpperCase();
+
+    return first + last;
 }
 
-Movie.prototype.getData = function() {
-    return this.title + ", " + this.lenght + "min." + ", " + this.genreCode();
+Movie.prototype.getData = function () {
+    return this.title + ', ' + this.length + 'min, ' + this.genreTwoLetters();
 }
 
 function Program(date) {
@@ -24,34 +25,31 @@ function Program(date) {
     this.listOfMovies = [];
 }
 
-Program.prototype.lenghtOfAllMovie = function(){
-    var sumOfMinutes = 0;
-    this.listOfMovies.forEach(function (item) {
-        sumOfMinutes += item.lenght;
-    });
-    return sumOfMinutes;
-}
-
 Program.prototype.addMovie = function (movie) {
-    if (!movie || !(movie instanceof Movie)) {
-        console.log("Invalid input!!!");
+    if (!Movie || !(movie instanceof Movie)) {
+        console.log('Invalid Input !');
         return;
     }
     this.listOfMovies.push(movie);
 }
 
-Program.prototype.getTotalMovies = function() {
+Program.prototype.getDate = function () {
     var day = this.date.getDate();
-    var month = this.month.getMonth() + 1;
-    var year = this.year.getFullYear();
-    var date = day +"." + month +"." + year;
-    var resultString = date;
-    
-    if (this.getTotalMovies() === 0) {
-        resultString += ", Program to be announced.";
-        return resultString;
-    }
+    var month = this.date.getMonth() + 1;
+    var year = this.date.getFullYear();
+    var valueDate = day + '.' + month + '.' + year;
 
-    resultString += ", " + this.getTotalMovies() + "movies duration:" + this.lenghtOfAllMovie() + "min.";
-    return resultString; 
+    return valueDate;
+}
+
+Program.prototype.getTotalMoviesLength = function () {
+    var sum = 0;
+    this.listOfMovies.forEach(function (movie) {
+        sum += movie.length;
+    })
+    return sum;
+}
+
+Program.prototype.getData = function () {
+    return this.getDate() + ', ' + this.listOfMovies.length + ' movies, duration: ' + this.getTotalMoviesLength();
 }
