@@ -10,8 +10,8 @@ function Movie(title, length, genre) {
 }
 
 Movie.prototype.genreTwoLetters = function () {
-    var first = this.genre[0].toUpperCase();
-    var last = this.genre[this.genre.length - 1].toUpperCase();
+    let first = this.genre[0].toUpperCase();
+    let last = this.genre[this.genre.length - 1].toUpperCase();
 
     return first + last;
 }
@@ -34,16 +34,16 @@ Program.prototype.addMovie = function (movie) {
 }
 
 Program.prototype.getDate = function () {
-    var day = this.date.getDate();
-    var month = this.date.getMonth() + 1;
-    var year = this.date.getFullYear();
-    var valueDate = day + '.' + month + '.' + year;
+    let day = this.date.getDate();
+    let month = this.date.getMonth() + 1;
+    let year = this.date.getFullYear();
+    let valueDate = day + '.' + month + '.' + year;
 
     return valueDate;
 }
 
 Program.prototype.getTotalMoviesLength = function () {
-    var sum = 0;
+    let sum = 0;
     this.listOfMovies.forEach(function (movie) {
         sum += movie.length;
     })

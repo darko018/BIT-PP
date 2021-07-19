@@ -17,9 +17,9 @@ const addMovieToProgram = document.getElementById('add-movie-to-program');
 
 
 function createMovieFunction() {
-    var titleValue = inputTitle.value;
-    var lengthValue = inputLength.value;
-    var genreValue = optionGenre.value;
+    let titleValue = inputTitle.value;
+    let lengthValue = inputLength.value;
+    let genreValue = optionGenre.value;
 
 
     if (!titleValue || !lengthValue || !genreValue) {
@@ -29,16 +29,16 @@ function createMovieFunction() {
 
     paraErrorMessage.textContent = '';
 
-    var movie = new Movie(titleValue, lengthValue, genreValue);
+    let movie = new Movie(titleValue, lengthValue, genreValue);
     festival.listOfAllMovies.push(movie);
-    var indexOfMovie = festival.listOfAllMovies.length - 1;
+    let indexOfMovie = festival.listOfAllMovies.length - 1;
     console.log(movie);
 
-    var li = document.createElement('li');
+    let li = document.createElement('li');
     li.textContent = movie.getData();
     listOfMovies.append(li);
 
-    var movieOptionElement = document.createElement('option');
+    let movieOptionElement = document.createElement('option');
     movieOptionElement.textContent = movie.title;
     movieOptionElement.setAttribute('value', indexOfMovie);
     movieSelect.appendChild(movieOptionElement);
@@ -50,12 +50,12 @@ function createMovieFunction() {
 
 array = [];
 function createProgramFunction() {
-    var programDate = inputDate.value;
+    let programDate = inputDate.value;
     console.log(programDate);
 
 
 
-    var date = new Date(programDate);
+    let date = new Date(programDate);
 
     if (date.getTime() < (Date.now() - 86400000)) {
         programError.textContent = 'Invalid date !';
@@ -75,17 +75,17 @@ function createProgramFunction() {
     programError.textContent = '';
 
 
-    var program = new Program(date);
+    let program = new Program(date);
     festival.listOfprograms.push(program);
-    var index = festival.listOfprograms.length - 1;
+    let index = festival.listOfprograms.length - 1;
 
-    var li = document.createElement('li');
+    let li = document.createElement('li');
     li.setAttribute('id', 'id-' + index);
     li.textContent = program.getData();
     programList.appendChild(li);
 
 
-    var optionProgram = document.createElement('option');
+    let optionProgram = document.createElement('option');
     optionProgram.setAttribute('value', index);
     optionProgram.setAttribute('id', 'option-' + index);
     optionProgram.textContent = program.getData();
@@ -103,13 +103,12 @@ function createProgramFunction() {
 
 function addMovieToProgramFunction() {
 
-    var movieIndex = movieSelect.value;
-    var programIndex = programSelect.value;
-
-    var movie = festival.listOfAllMovies[movieIndex];
-    var program = festival.listOfprograms[programIndex];
-    var li = document.querySelector('#id-' + programIndex);
-    var option = document.querySelector('#option-' + programIndex);
+    let movieIndex = movieSelect.value;
+    let programIndex = programSelect.valulet
+    let movie = festival.listOfAllMovies[movieIndex];
+    let program = festival.listOfprograms[programIndex];
+    let li = document.querySelector('#id-' + programIndex);
+    let option = document.querySelector('#option-' + programIndex);
 
     program.addMovie(movie);
     li.textContent = program.getData();
