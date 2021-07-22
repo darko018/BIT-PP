@@ -1,11 +1,11 @@
-// zadatak 1
+// excercise 1
 
 var boja = 'plava';
 
 console.log(boja);
 
 
-// zadatak 2
+// excercise 2
 
 var boja = 'web';
 
